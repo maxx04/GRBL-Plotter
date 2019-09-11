@@ -769,7 +769,7 @@ namespace GRBL_Plotter
                     label_wa.Location = new Point(251, 14);
                     label_ma.Location = new Point(263, 32);
                     btnZeroA.Location = new Point(335, 14);
-                    label_status0.Location = new Point(1, 118); // keep home and status
+                    //label_status0.Location = new Point(1, 118); // keep home and status
                     label_status.Location = new Point(1, 138);
                     btnHome.Location = new Point(106, 111);
                     btnHome.Size = new Size(122, 57);
@@ -792,14 +792,14 @@ namespace GRBL_Plotter
 
                     if (ctrl4thAxis || grbl.axisA)
                     {
-                        label_status0.Location = new Point(1, 128);
+                        //label_status0.Location = new Point(1, 128);
                         label_status.Location = new Point(1, 148);
                         btnHome.Location = new Point(106, 138);
                         btnHome.Size = new Size(122, 30);
                     }
                     else
                     {
-                        label_status0.Location = new Point(1, 118);
+                        //label_status0.Location = new Point(1, 118);
                         label_status.Location = new Point(1, 138);
                         btnHome.Location = new Point(106, 111);
                         btnHome.Size = new Size(122, 57);
