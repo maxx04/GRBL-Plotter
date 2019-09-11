@@ -240,7 +240,6 @@ namespace GRBL_Plotter
             this.btnZeroA = new System.Windows.Forms.Button();
             this.label_ma = new System.Windows.Forms.Label();
             this.label_wa = new System.Windows.Forms.Label();
-            this.btnHome = new System.Windows.Forms.Button();
             this.btnZeroXYZ = new System.Windows.Forms.Button();
             this.btnZeroXY = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
@@ -249,7 +248,6 @@ namespace GRBL_Plotter
             this.btnZeroY = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnZeroX = new System.Windows.Forms.Button();
-            this.label_status = new System.Windows.Forms.Label();
             this.label_mx = new System.Windows.Forms.Label();
             this.label_my = new System.Windows.Forms.Label();
             this.label_mz = new System.Windows.Forms.Label();
@@ -334,6 +332,8 @@ namespace GRBL_Plotter
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.gamePadTimer = new System.Windows.Forms.Timer(this.components);
+            this.label_status = new System.Windows.Forms.Label();
+            this.btnHome = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -1475,7 +1475,10 @@ namespace GRBL_Plotter
             resources.ApplyResources(this.tLPRechtsOben, "tLPRechtsOben");
             this.tLPRechtsOben.Controls.Add(this.groupBox5, 1, 0);
             this.tLPRechtsOben.Controls.Add(this.groupBoxCoordinates, 0, 0);
+            this.tLPRechtsOben.Controls.Add(this.label_status, 0, 1);
+            this.tLPRechtsOben.Controls.Add(this.btnHome, 1, 1);
             this.tLPRechtsOben.Name = "tLPRechtsOben";
+            this.tLPRechtsOben.Paint += new System.Windows.Forms.PaintEventHandler(this.TLPRechtsOben_Paint);
             // 
             // groupBox5
             // 
@@ -1621,6 +1624,7 @@ namespace GRBL_Plotter
             // 
             this.groupBoxCoordinates.Controls.Add(this.label_c);
             this.groupBoxCoordinates.Controls.Add(this.btnZeroC);
+            this.groupBoxCoordinates.Controls.Add(this.label_status0);
             this.groupBoxCoordinates.Controls.Add(this.label_mc);
             this.groupBoxCoordinates.Controls.Add(this.label_wc);
             this.groupBoxCoordinates.Controls.Add(this.label11);
@@ -1628,12 +1632,10 @@ namespace GRBL_Plotter
             this.groupBoxCoordinates.Controls.Add(this.label_mb);
             this.groupBoxCoordinates.Controls.Add(this.label_wb);
             this.groupBoxCoordinates.Controls.Add(this.lblCurrentG);
-            this.groupBoxCoordinates.Controls.Add(this.label_status0);
             this.groupBoxCoordinates.Controls.Add(this.label_a);
             this.groupBoxCoordinates.Controls.Add(this.btnZeroA);
             this.groupBoxCoordinates.Controls.Add(this.label_ma);
             this.groupBoxCoordinates.Controls.Add(this.label_wa);
-            this.groupBoxCoordinates.Controls.Add(this.btnHome);
             this.groupBoxCoordinates.Controls.Add(this.btnZeroXYZ);
             this.groupBoxCoordinates.Controls.Add(this.btnZeroXY);
             this.groupBoxCoordinates.Controls.Add(this.label4);
@@ -1642,7 +1644,6 @@ namespace GRBL_Plotter
             this.groupBoxCoordinates.Controls.Add(this.btnZeroY);
             this.groupBoxCoordinates.Controls.Add(this.label2);
             this.groupBoxCoordinates.Controls.Add(this.btnZeroX);
-            this.groupBoxCoordinates.Controls.Add(this.label_status);
             this.groupBoxCoordinates.Controls.Add(this.label_mx);
             this.groupBoxCoordinates.Controls.Add(this.label_my);
             this.groupBoxCoordinates.Controls.Add(this.label_mz);
@@ -1733,14 +1734,6 @@ namespace GRBL_Plotter
             resources.ApplyResources(this.label_wa, "label_wa");
             this.label_wa.Name = "label_wa";
             // 
-            // btnHome
-            // 
-            resources.ApplyResources(this.btnHome, "btnHome");
-            this.btnHome.Name = "btnHome";
-            this.toolTip1.SetToolTip(this.btnHome, resources.GetString("btnHome.ToolTip"));
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
             // btnZeroXYZ
             // 
             resources.ApplyResources(this.btnZeroXYZ, "btnZeroXYZ");
@@ -1795,11 +1788,6 @@ namespace GRBL_Plotter
             this.toolTip1.SetToolTip(this.btnZeroX, resources.GetString("btnZeroX.ToolTip"));
             this.btnZeroX.UseVisualStyleBackColor = true;
             this.btnZeroX.Click += new System.EventHandler(this.btnZeroX_Click);
-            // 
-            // label_status
-            // 
-            resources.ApplyResources(this.label_status, "label_status");
-            this.label_status.Name = "label_status";
             // 
             // label_mx
             // 
@@ -2368,6 +2356,19 @@ namespace GRBL_Plotter
             // 
             this.gamePadTimer.Tick += new System.EventHandler(this.gamePadTimer_Tick);
             // 
+            // label_status
+            // 
+            resources.ApplyResources(this.label_status, "label_status");
+            this.label_status.Name = "label_status";
+            // 
+            // btnHome
+            // 
+            resources.ApplyResources(this.btnHome, "btnHome");
+            this.btnHome.Name = "btnHome";
+            this.toolTip1.SetToolTip(this.btnHome, resources.GetString("btnHome.ToolTip"));
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
             // MainForm
             // 
             this.AllowDrop = true;
@@ -2456,7 +2457,6 @@ namespace GRBL_Plotter
         private System.Windows.Forms.TextBox tbFile;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.GroupBox groupBoxCoordinates;
-        private System.Windows.Forms.Label label_status;
         private System.Windows.Forms.Label lblRemaining;
         private System.Windows.Forms.Label label_status0;
         private System.Windows.Forms.Label label4;
@@ -2467,7 +2467,6 @@ namespace GRBL_Plotter
         private System.Windows.Forms.Button btnZeroZ;
         private System.Windows.Forms.Button btnZeroY;
         private System.Windows.Forms.Button btnZeroX;
-        private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnCustom1;
         private System.Windows.Forms.Button btnCustom2;
@@ -2700,6 +2699,8 @@ namespace GRBL_Plotter
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator17;
         private System.Windows.Forms.ToolStripMenuItem toolStrip_RadiusComp;
         private System.Windows.Forms.ToolStripTextBox toolStrip_tBRadiusCompValue;
+        private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Label label_status;
     }
 }
 

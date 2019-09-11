@@ -38,6 +38,10 @@ namespace GRBL_Plotter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            // ***this line is added***
+            if (Environment.OSVersion.Version.Major >= 6)
+                SetProcessDPIAware();
+
             bool newInstance;
             using (var mutex = new Mutex(true, "Deine_Anwendung", out newInstance))
             {
@@ -46,5 +50,10 @@ namespace GRBL_Plotter
             }
             //Application.Run(new MainForm());
         }
+            // ***also dllimport of that function***
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
+    
+
     }
 }

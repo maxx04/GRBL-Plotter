@@ -184,8 +184,8 @@ namespace GRBL_Plotter
             { DIYControlopen(sender, e); }
 
             this.gBoxOverride.Click += gBoxOverride_Click;
-            gBoxOverride.Height = 15;
-            gBoxOverrideBig = false;
+            //gBoxOverride.Height = 15;
+            //gBoxOverrideBig = false;
 
             lbDimension.Select(0, 0);
             loadSettings(sender, e);
@@ -930,7 +930,8 @@ namespace GRBL_Plotter
                     }
 
                     if (!grbl.isVersion_0)
-                    {   gBoxOverride.Height = 175;
+                    {
+                        //gBoxOverride.Height = 175;
                         gBoxOverrideBig = true;
                     }
 
@@ -1761,27 +1762,27 @@ namespace GRBL_Plotter
         // adapt size of controls
         private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
         {   int add = splitContainer1.Panel1.Width - 296;
-            pbFile.Width = 194 + add;
-            pbBuffer.Left = 219 + add;
-            gBOverrideFRGB.Width = 284 + add;
-            gBOverrideSSGB.Width = 284 + add;
-            gBOverrideASGB.Width = 284 + add;
-            gBOverrideRGB.Width = 284 + add;
+            //pbFile.Width = 194 + add;
+            //pbBuffer.Left = 219 + add;
+            //gBOverrideFRGB.Width = 284 + add;
+            //gBOverrideSSGB.Width = 284 + add;
+            //gBOverrideASGB.Width = 284 + add;
+            //gBOverrideRGB.Width = 284 + add;
 
-            lbInfo.Width = 280 + add;
-            lbDimension.Width = 130 + add;
-            btnLimitExceed.Left = 112 + add;
-            groupBox4.Left = 133 + add;
+            //lbInfo.Width = 280 + add;
+            //lbDimension.Width = 130 + add;
+            //btnLimitExceed.Left = 112 + add;
+            //groupBox4.Left = 133 + add;
         }
 
-        private bool gBoxOverrideBig = false;
+        private bool gBoxOverrideBig = true;
         private void gBoxOverride_Click(object sender, EventArgs e)
         {
-            if (gBoxOverrideBig)
-                gBoxOverride.Height = 15;
-            else
-                gBoxOverride.Height = 175;
-            gBoxOverrideBig = !gBoxOverrideBig;
+            //if (gBoxOverrideBig)
+            //    gBoxOverride.Height = 15;
+            //else
+            //    gBoxOverride.Height = 175;
+            //gBoxOverrideBig = !gBoxOverrideBig;
         }
 
         public void setUndoText(string txt)
@@ -1800,6 +1801,16 @@ namespace GRBL_Plotter
                 unDo2ToolStripMenuItem.Text = "Undo last action";
                 unDo2ToolStripMenuItem.Enabled = false;
             }
+        }
+
+        private void Label_status_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TLPRechtsOben_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
