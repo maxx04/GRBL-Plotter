@@ -75,10 +75,10 @@ namespace GRBL_Plotter
         }
         private void GCodeFromImage_Resize(object sender, EventArgs e)
         {
-            panel1.Width = Width - 440;
-            pictureBox1.Width = Width - 440;
-            panel1.Height = Height - 60;
-            pictureBox1.Height = Height - 60;
+            //panel1.Width = Width - 440;
+            //pictureBox1.Width = Width - 440;
+            //panel1.Height = Height - 60;
+            //pictureBox1.Height = Height - 60;
             pictureBox1.Refresh();
         }
 

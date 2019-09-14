@@ -152,17 +152,17 @@ namespace GRBL_Plotter
         }
         private void SerialForm_Resize(object sender, EventArgs e)
         {
-            rtbLog.Width = this.Width - 20;
-            rtbLog.Height = this.Height - 205;
-            btnClear.Location = new Point(btnClear.Location.X, this.Height - 86);
-            cBCommand.Location = new Point(cBCommand.Location.X, this.Height - 84);
-            btnSend.Location = new Point(btnSend.Location.X, this.Height - 86);
-            btnGRBLCommand0.Location = new Point(btnGRBLCommand0.Location.X, this.Height - 62);
-            btnGRBLCommand1.Location = new Point(btnGRBLCommand1.Location.X, this.Height - 62);
-            btnGRBLCommand2.Location = new Point(btnGRBLCommand2.Location.X, this.Height - 62);
-            btnGRBLCommand3.Location = new Point(btnGRBLCommand3.Location.X, this.Height - 62);
-            btnGRBLCommand4.Location = new Point(btnGRBLCommand4.Location.X, this.Height - 62);
-            btnGRBLReset.Location = new Point(btnGRBLReset.Location.X, this.Height - 62);
+            //rtbLog.Width = this.Width - 20;
+            //rtbLog.Height = this.Height - 205;
+            //btnClear.Location = new Point(btnClear.Location.X, this.Height - 86);
+            //cBCommand.Location = new Point(cBCommand.Location.X, this.Height - 84);
+            //btnSend.Location = new Point(btnSend.Location.X, this.Height - 86);
+            //btnGRBLCommand0.Location = new Point(btnGRBLCommand0.Location.X, this.Height - 62);
+            //btnGRBLCommand1.Location = new Point(btnGRBLCommand1.Location.X, this.Height - 62);
+            //btnGRBLCommand2.Location = new Point(btnGRBLCommand2.Location.X, this.Height - 62);
+            //btnGRBLCommand3.Location = new Point(btnGRBLCommand3.Location.X, this.Height - 62);
+            //btnGRBLCommand4.Location = new Point(btnGRBLCommand4.Location.X, this.Height - 62);
+            //btnGRBLReset.Location = new Point(btnGRBLReset.Location.X, this.Height - 62);
         }
 
         public void updateGrblSettings()

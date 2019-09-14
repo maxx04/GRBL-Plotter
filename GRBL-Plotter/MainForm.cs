@@ -156,6 +156,8 @@ namespace GRBL_Plotter
 
             this.Text = appName + " Ver. " + System.Windows.Forms.Application.ProductVersion.ToString();
 
+            full_hight_BoxOverride = gBoxOverride.Height;
+
             loadToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
             saveToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.S;
             loadMachineParametersToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.Control | Keys.O;
@@ -1709,13 +1711,17 @@ namespace GRBL_Plotter
         private void MainForm_Resize(object sender, EventArgs e)
         {
             if (WindowState == FormWindowState.Normal)
+            {
                 resizeJoystick();
+
+            }
+              
         }
         private void resizeJoystick()
         {
             int virtualJoystickSize = Properties.Settings.Default.joystickSize;
-            int zRatio = 25;                    // 20% of xyJoystick width
-            int zCount = 1;
+            //int zRatio = 25;                    // 20% of xyJoystick width
+            //int zCount = 1;
            // grbl.axisB = true;
            // grbl.axisC = true;
            /*
@@ -1779,13 +1785,17 @@ namespace GRBL_Plotter
         }
 
         private bool gBoxOverrideBig = true;
+        private int full_hight_BoxOverride = 0;
         private void gBoxOverride_Click(object sender, EventArgs e)
         {
-            //if (gBoxOverrideBig)
-            //    gBoxOverride.Height = 15;
-            //else
-            //    gBoxOverride.Height = 175;
-            //gBoxOverrideBig = !gBoxOverrideBig;
+            if (gBoxOverrideBig)
+            {              
+                gBoxOverride.Height = gBOverrideFRGB.Location.Y;
+            }
+            else
+                gBoxOverride.Height = full_hight_BoxOverride;
+
+            gBoxOverrideBig = !gBoxOverrideBig;
         }
 
         public void setUndoText(string txt)
@@ -1811,15 +1821,6 @@ namespace GRBL_Plotter
 
         }
 
-        private void TLPRechtsOben_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Label_status_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }
 

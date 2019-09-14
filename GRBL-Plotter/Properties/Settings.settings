@@ -837,7 +837,7 @@
       <Value Profile="(Default)">Normal</Value>
     </Setting>
     <Setting Name="mainFormSplitDistance" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">296</Value>
+      <Value Profile="(Default)">425</Value>
     </Setting>
     <Setting Name="mainFormSize" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">900, 640</Value>

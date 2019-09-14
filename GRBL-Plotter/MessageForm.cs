@@ -18,12 +18,12 @@ namespace GRBL_Plotter
 
         public void showMessage(string headline, string text)
         {
-            this.Text = headline;
-            tBInfo.Text = text;
-            this.Width = Math.Min(tBInfo.Width + 5,200);
-            this.Height = tBInfo.Height + 45;
-            btnClose.Top = tBInfo.Height + 10;
-            btnClose.Left = this.Width / 2 - 37;
+            //this.Text = headline;
+            //tBInfo.Text = text;
+            //this.Width = Math.Min(tBInfo.Width + 5,200);
+            //this.Height = tBInfo.Height + 45;
+            //btnClose.Top = tBInfo.Height + 10;
+            //btnClose.Left = this.Width / 2 - 37;
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -33,18 +33,18 @@ namespace GRBL_Plotter
 
         private void MessageForm_SizeChanged(object sender, EventArgs e)
         {
-            tBInfo.Width  = this.Width - 26;
-            tBInfo.Height = this.Height- 75;
-            btnClose.Left = this.Width / 2 - 45;
-            btnClose.Top = this.Height - 65;
+            //tBInfo.Width  = this.Width - 26;
+            //tBInfo.Height = this.Height- 75;
+            //btnClose.Left = this.Width / 2 - 45;
+            //btnClose.Top = this.Height - 65;
         }
 
         private void MessageForm_Load(object sender, EventArgs e)
         {
-            this.Width  = 600;
-            this.Height = 600;
-            this.Top = 0;
-            this.Left = 400;
+            //this.Width  = 600;
+            //this.Height = 600;
+            //this.Top = 0;
+            //this.Left = 400;
         }
     }
 }
