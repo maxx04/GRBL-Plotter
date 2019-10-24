@@ -509,9 +509,11 @@
     <Content Include="Recent.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\btn_play_192dpi.png" />
     <Content Include="Resources\fctb_hotkeys.txt" />
     <None Include="Resources\led_on.png" />
     <None Include="Resources\led_off.png" />
+    <None Include="Resources\Test.png" />
     <Content Include="_misc\script_pen_pickup.nc">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
